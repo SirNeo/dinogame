@@ -16,7 +16,7 @@ py main.py
 ````
 
 
-##### Build APK for Android
+##### Build APK for Android (Windows is not supported)
 Install  python-for-android
 ````bash
 pip install python-for-android
@@ -30,26 +30,3 @@ Alternative
 ````bash
 p4a recipes
 ````
-
-In Windows, do some changes in this library:
-The sh dependency isn't supported in Windows. Install pbs instead.
-
-Change in all files:
-````python
-import sh
-````
-to
-````python
-import pbs as sh
-````
-
-Change in all files:
-````python
-from os import uname
-````
-to
-````python
-from platform import uname
-````
-
-Modify toolchain.py, about line 25 remove the version check of sh
